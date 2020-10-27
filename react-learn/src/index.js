@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css'
 import NewTick from './components/NewTick'
 // import Tick from './components/Tick'
 // import PassByValue from './components/PassByValue'
@@ -23,6 +24,7 @@ function start() {
 }
 start();
  */
+ReactDOM.render(<NewTick number={10}></NewTick>, root)
 // ReactDOM.render(
 //   <>
 //     <BallListCmp />
