@@ -11,29 +11,31 @@ let index = 0
 let timer = null
 
 function start() {
-  clearInterval(timer)
-  timer = setInterval(() => {
-    index = (index + 1)% 3
-    console.log(index)
-    init()
-  }, 2000)
+    stop()
+    timer = setInterval(() => {
+        index = (index + 1) % 3
+        console.log(index)
+        init()
+    }, 2000)
 }
 
 function stop() {
-  clearInterval(timer)
+    clearInterval(timer)
 }
 
 function init() {
-  ReactDOM.render(
-    <img src={imgArr[index]} alt={''} />,
-    root
-  );
+    ReactDOM.render( <
+        img src = { imgArr[index] }
+        alt = { '' }
+        />,
+        root
+    );
 }
 init()
 start()
-root.onmouseenter = function () {
-  stop()
+root.onmouseenter = function() {
+    stop()
 }
-root.onmouseleave = function () {
-  start()
+root.onmouseleave = function() {
+    start()
 }
