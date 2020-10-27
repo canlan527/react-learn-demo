@@ -20,3 +20,6 @@ code {
     height: 100%;
     display: block;
 }
+.image-border {
+    border: 10px solid #00f;
+}
