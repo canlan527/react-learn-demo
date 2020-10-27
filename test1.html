@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+
+    <!-- React的核心库，与宿主环境无关 -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <!-- 依赖核心库，将核心库的功能与页面结合 -->
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+
+    <script>
+        var span = React.createElement('span', {
+            color: '#f00',
+        }, ' span的内容')
+        var h2 = React.createElement('h2', {
+            title: '这是一个h2标签'
+        }, '这是子节点', span);
+        ReactDOM.render(h2, document.getElementById('root'))
+    </script>
+</body>
+
+</html>
