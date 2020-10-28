@@ -1,15 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
-import NewTick from './components/NewTick'
-import A from './components/Test.js'
+// import NewTick from './components/NewTick'
+// import A from './components/Test.js'
 // import Tick from './components/Tick'
 // import PassByValue from './components/PassByValue'
 // import Ball from './components/Ball'
 // import BallList from './components/BallList'
-import BallListCmp from './components/BallListCmp'
+// import BallListCmp from './components/BallListCmp'
 // import BallCmp from './components/BallCmp'
+// import MoveBall from './components/MoveBall'
+import MoveBallList from './components/MoveBallList'
 const root = document.getElementById('root')
+
+
+// ReactDOM.render(<MoveBall xSpeed={100} ySpeed={200} left={100} top={100} bg='#393' />, root)
+ReactDOM.render(<MoveBallList  />, root)
+
+
+
 
 /* let num = 10;
 
@@ -26,7 +35,7 @@ function start() {
 start();
  */
 // ReactDOM.render(<NewTick number={10}></NewTick>, root)
-ReactDOM.render(<A/>,root)
+// ReactDOM.render(<A/>,root)
 // ReactDOM.render(
 //   <A>
 //     <BallListCmp />
