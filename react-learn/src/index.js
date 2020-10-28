@@ -10,15 +10,21 @@ import './index.css'
 // import BallListCmp from './components/BallListCmp'
 // import BallCmp from './components/BallCmp'
 // import MoveBall from './components/MoveBall'
-import MoveBallList from './components/MoveBallList'
+// // import MoveBallList from './components/MoveBallList'
+// import NewBall from './components/NewBall';
+// import NewBallList from './components/NewBallList'
+// import NextBall from './components/NextBall'
+import NextBallList from './components/NextBallList'
+
 const root = document.getElementById('root')
 
 
 // ReactDOM.render(<MoveBall xSpeed={100} ySpeed={200} left={100} top={100} bg='#393' />, root)
-ReactDOM.render(<MoveBallList  />, root)
-
-
-
+// ReactDOM.render(<MoveBallList  />, root)
+// ReactDOM.render(<NewBall left={100} top={200} xSpeed={200} ySpeed={200} bgc="#e60" />, root)
+// ReactDOM.render(<NewBallList />, root)
+// ReactDOM.render(<NextBall />, root)
+ReactDOM.render(<NextBallList />,root)
 
 /* let num = 10;
 
