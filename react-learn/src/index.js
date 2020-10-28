@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
 import NewTick from './components/NewTick'
+import A from './components/Test.js'
 // import Tick from './components/Tick'
 // import PassByValue from './components/PassByValue'
 // import Ball from './components/Ball'
@@ -24,9 +25,10 @@ function start() {
 }
 start();
  */
-ReactDOM.render(<NewTick number={10}></NewTick>, root)
+// ReactDOM.render(<NewTick number={10}></NewTick>, root)
+ReactDOM.render(<A/>,root)
 // ReactDOM.render(
-//   <>
+//   <A>
 //     <BallListCmp />
 //     {/* <BallCmp left={300} top={300} xSpeed={100} ySpeed={150} bgc='#333' /> */}
 //     {/* <BallList /> */}
@@ -34,6 +36,6 @@ ReactDOM.render(<NewTick number={10}></NewTick>, root)
 //     {/* <Tick num={10}/> */}
 //     {/* 传值 */}
 //     {/* <PassByValue/> */}
-//   </>,
+//   </A>,
 //   root
 // );
