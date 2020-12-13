@@ -12,6 +12,9 @@ import './styles.css'
  */
 export default function Pager(props) {
     let pageNumber = getPageNumber(props.total, props.limit)// 总页码
+    if(pageNumber === 0) {
+      return null;
+    }
     let minNumber = getMinNumber(props.current, props.panelNumber) // 拿到最小数字
     let maxNumber = getMaxNumber(minNumber, pageNumber, props.panelNumber) // 拿到最大数字
     let numbers = []
