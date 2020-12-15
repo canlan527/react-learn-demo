@@ -1,0 +1,13 @@
+.lay-out {
+  display: flex;
+}
+.lay-out .aside-left {
+  order:1;
+}
+.lay-out .main {
+  order: 2;
+  flex: 1;
+}
+.lay-out .aside-right {
+  order:3;
+}
