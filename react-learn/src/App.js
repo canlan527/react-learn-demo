@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-
+import Comp from './components/Comp'
 export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>ref</h1>
+        <Comp></Comp>
       </div>
     )
   }
