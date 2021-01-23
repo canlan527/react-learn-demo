@@ -1,4 +1,5 @@
 .banner-container {
   position: relative;
   border: 1px solid #f00;
+  overflow: hidden;
 }
