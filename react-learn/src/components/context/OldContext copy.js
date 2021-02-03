@@ -7,31 +7,15 @@ const types = {
   onChangeA: PropTypes.func
 }
 
-class ChildA extends Component {
-
-  static contextTypes = types;
-
-  static childContextTypes = {
-    a: PropTypes.number,
-    c: PropTypes.string
-  }
-
-  getChildContext() {
-    return {
-      a: 1222,
-      c: 'c '
-    }
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>ChildA:获取上下文的数据 a: {this.context.a} b:{this.context.b} </h1>
-        <ChildB />
-      </div>
-    )
-  }
+function ChildA(props, context) {
+  return (
+    <div>
+      <h1>ChildA:获取上下文的数据 a: {context.a} </h1>
+      <ChildB />
+    </div>
+  )
 }
+ChildA.contextTypes = types;
 
 class ChildB extends Component{
   /**
@@ -40,10 +24,7 @@ class ChildB extends Component{
   // static contextTypes = {
   //   a: types.a
   // }
-  static contextTypes = {
-    ...types,
-    c: PropTypes.string 
-  };
+  static contextTypes = types;
   constructor(props,context) {
     // super(props);
     // console.log(context);
@@ -53,7 +34,7 @@ class ChildB extends Component{
   render() {
     console.log(this.context);
     return  <p>
-      ChildB：来自于上下文的数据 a: {this.context.a},b: {this.context.b},c: {this.context.c}
+      ChildB：来自于上下文的数据 a: {this.context.a}
      
       <button onClick={() => {
         this.context.onChangeA(this.context.a + 2);
