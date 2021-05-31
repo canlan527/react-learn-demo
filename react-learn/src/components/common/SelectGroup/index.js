@@ -8,7 +8,7 @@
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import types from '../../utils/CommonTypes'
+import types from '../../../utils/CommonTypes'
 /**
  * 一组下拉框
  */

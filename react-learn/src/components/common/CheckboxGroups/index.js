@@ -7,7 +7,7 @@
  * @FilePath: \react-learn-demo\react-learn\src\components\CheckboxGroups\index.js
  */
 import React, { Component } from 'react'
-import types from '../../utils/CommonTypes'
+import types from '../../../utils/CommonTypes'
 import PropTypes from 'prop-types'
 /**
  * 一组多选框

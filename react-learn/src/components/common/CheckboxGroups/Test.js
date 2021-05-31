@@ -8,7 +8,7 @@
  */
 import React, { Component } from 'react'
 import CheckboxGroups from './index'
-import {getAllStudents} from '../../services/student'
+import {getAllStudents} from '../../../services/student'
 export default class Test extends Component {
   state = {
     datas: [],
