@@ -1,32 +1,67 @@
 import React, { Component } from 'react'
 
 // 创建一个上下文对象
-const ctx = React.createContext();
-
+const ctx1 = React.createContext();
+const ctx2 = React.createContext();
+ChildA.datas = {
+  a: 789,
+  c: 'hello'
+}
 function ChildA(props) {
+  const Provider = ctx2.Provider;
+  let obj = {
+    a: 7777,
+    c: 'rinimabi'
+  }
   return (
-    <div>
-      <h1>ChildA</h1>
-      <h2>
-        <ctx.Consumer>
-          {value => <> {value.a}, {value.b} </>}
-        </ctx.Consumer>
-      </h2>
-    </div>
+    <ctx2.Provider value={obj }>
+      <div>
+        <h1>ChildA</h1>
+        <h2>
+          <ctx1.Consumer children={value => <> {value.a}, {value.b} </>}>
+          </ctx1.Consumer>
+        </h2>
+        <ChildB></ChildB>
+      </div>
+    </ctx2.Provider>
   )
 }
 
 class ChildB extends Component {
-  static contextType = ctx; // 赋值 ctx
+  shouldComponentUpdate() {
+    console.log('运行了优化')
+    return false;
+  } 
   render() {
     return (
-      <p>
-        ChildB,来自于上下文的数据： a:{this.context.a},b: {this.context.b}
-        <button onClick={() => {
-          this.context.changeA(this.context.a+100)
-        }}
-        >后代组件的按钮，点击a加100</button>
-      </p>
+     <ctx1.Consumer>
+        {value => 
+        <>
+        <p>
+            ChildB,来自于上下文的数据： a:{value.a},b: {value.b}
+            <button onClick={() => {
+              value.changeA(value.a+100)
+            }}
+            >后代组件的按钮，点击a加100</button>
+          </p>
+          <p>
+          <ctx2.Consumer>
+            {
+              val => (
+                <>
+                  来自ctx2的数据： a:{val.a}, c: {val.c}
+                </>
+              )
+            }
+          </ctx2.Consumer>
+        </p>
+
+        </>
+        
+         
+        }
+        
+     </ctx1.Consumer>
     )
   }
 }
@@ -34,28 +69,28 @@ class ChildB extends Component {
 export default class NewContext extends Component {
 
   state = {
-    a: 0,
+    ctx: {
+      a: 0,
     b: 'abc',
     changeA: (newA) => {
       this.setState({
         a: newA
       })
     }
+    }
   }
 
   render() {
-    const Provider = ctx.Provider;
+    const Provider = ctx1.Provider;
     return (
-      <ctx.Provider value={this.state}>
+      <ctx1.Provider value={this.state.ctx}>
         <div>
-          <ChildA></ChildA>
+          <ChildB></ChildB>
           <button onClick={() => {
-            this.setState({
-              a: this.state.a + 1
-            })
+            this.setState({})
           }}>父组件的按钮，a加1</button>
         </div>
-      </ctx.Provider>
+      </ctx1.Provider>
     )
   }
 }
