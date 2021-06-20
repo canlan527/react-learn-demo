@@ -1,13 +1,11 @@
 import React from 'react'
-import OldContext from './components/context/OldContext'
-import NewContext from './components/context/NewContext'
-import Test from './components/Form/Test'
+import './App.css'
+import TaskContainer  from './components/TaskContainer'
 export default function App() {
+  console.log('App 渲染')
   return (
     <div>
-      {/* <OldContext /> */}
-      {/* <NewContext /> */}
-      <Test />
+      <TaskContainer />
     </div>
   )
 }
