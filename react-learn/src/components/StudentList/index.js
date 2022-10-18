@@ -1,18 +1,20 @@
 import React,{useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 
-export default function StudentList({page}) {
+export default function StudentList({stus}) {
+
+  const list = stus.map(item => <li key={item.id}>{item.name}, {item.sex === 1? '男' : '女'}</li>)
   return (
-    <div>
-      
-    </div>
+    <ul>
+      {list}
+    </ul>
   )
 }
 
 StudentList.defaultProps = {
-  page: 1,
+  stus: [],
 }
 
 StudentList.propTypes = {
-  page: PropTypes.number.isRequired,
+  stus: PropTypes.array.isRequired,
 }
